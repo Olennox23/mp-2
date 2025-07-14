@@ -4,15 +4,16 @@ import type { Question } from "../types";
 type AnswerProps = {
     questions: Question[];
 };
-const StyledButton = styled.button`
-     width: 20vw;
+/* edit button */
+const StyledButton = styled.button` 
+     width: 20vw; 
      margin: 2vh auto;
-    font-size: calc(5px + 2vh);
+    font-size: calc(5px + 2vh); 
     @media (max-width: 768px) {
         font-size: calc(5px + 1vh);
     }
     `
-
+/* make a table to hold the question and answers */
 const StyledDiv = styled.div`
     display: flex;
     flex-direction: column;
@@ -23,40 +24,41 @@ const StyledDiv = styled.div`
     background-color: lightyellow;
     
 `;
+/* makes the next question appear below question and answer box */
 const StyledDiv2 = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    @media (max-width: 768px) {
-        font-size: calc(5px + 1vh);
-    }
+   
   
 `
+/* edit the appearance of categories and question */
 const StyledDiv3 = styled.div`
     width: 50vw;
     margin: 0 auto;
     text-align: center;
-    padding: 1vh 0 0 0;
+    padding: 1vh  0;
     font-size: calc(5px + 2vh);
     @media (max-width: 768px) {
         font-size: calc(5px + 1vh);
     }
 `
+/* edit the style of the answers */
 const StyledLabel = styled.label`
     border: 1px solid black;
     padding: 1vh 0;
     width: 50vw;
     font-size: calc(10px + 1vh);
-    font-family:   sans-serif;
+    font-family:   sans-serif , Arial;
     cursor: pointer;
     @media (max-width: 768px) {
         font-size: calc(5px + 1vh);
     }
     
 `
-
+/*styles the box which appears when answer is selected */
 const StyledP = styled.p<{correct : boolean }>`
-    background-color: ${({ correct }) => (correct ? "green" : "red")};
+    background-color: ${({ correct }) => (correct ? "green" : "red")}; /* if correct is true, background color is green, if false red*/
     font-weight: bold;
     width: 100%;
     text-align: center;
@@ -67,12 +69,14 @@ const StyledP = styled.p<{correct : boolean }>`
         font-size: calc(5px + 1vh);
     }
 `
-{/* helper function used to randomize the order of answers when when a question appears */}
+{/* helper function used to randomize the order of answers when when a question appears
+    uses fisher yates algorithm
+    makes */}
 function shuffleArray<T>(array: T[]): T[] {
-    const newArr = [...array];
-    for (let i = newArr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
+    const newArr = [...array]; /* creates copy */
+    for (let i = newArr.length - 1; i > 0; i--) {  /* iterates from length of array to bottom */
+        const j = Math.floor(Math.random() * (i + 1)); /* randomizes number beetween 0 and i */
+        [newArr[i], newArr[j]] = [newArr[j], newArr[i]]; /* swaps i and and the random number in the array */
     }
     return newArr;
 }

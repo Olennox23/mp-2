@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import type { Question } from "../types";
 import {AnswerDisplay} from "./AnswerDisplay.tsx";
 import styled from "styled-components";
-
+/* edit appearance of entire page */
 const StyledDiv = styled.div`
     width: 80vw;
     margin: 0 auto;
