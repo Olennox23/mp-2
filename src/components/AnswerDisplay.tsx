@@ -47,6 +47,7 @@ const StyledLabel = styled.label`
     padding: 1vh 0;
     width: 50vw;
     font-size: calc(10px + 1vh);
+    font-family:   sans-serif;
     cursor: pointer;
     @media (max-width: 768px) {
         font-size: calc(5px + 1vh);
