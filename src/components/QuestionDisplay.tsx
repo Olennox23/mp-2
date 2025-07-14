@@ -10,8 +10,9 @@ const StyledDiv = styled.div`
     flex-direction: column;
    align-items: center;
     background-color: lightblue;
-    
+   
     height: 100vh;
+    font-family:  'Arial Black', sans-serif;
 `;
 
 

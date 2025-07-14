@@ -8,7 +8,9 @@ const StyledButton = styled.button`
      width: 20vw;
      margin: 2vh auto;
     font-size: calc(5px + 2vh);
-    
+    @media (max-width: 768px) {
+        font-size: calc(5px + 1vh);
+    }
     `
 
 const StyledDiv = styled.div`
@@ -25,21 +27,30 @@ const StyledDiv2 = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media (max-width: 768px) {
+        font-size: calc(5px + 1vh);
+    }
   
 `
 const StyledDiv3 = styled.div`
     width: 50vw;
     margin: 0 auto;
     text-align: center;
-    padding: 1vh 0;
+    padding: 1vh 0 0 0;
     font-size: calc(5px + 2vh);
+    @media (max-width: 768px) {
+        font-size: calc(5px + 1vh);
+    }
 `
 const StyledLabel = styled.label`
     border: 1px solid black;
-    padding: 10px 0;
+    padding: 1vh 0;
     width: 50vw;
     font-size: calc(10px + 1vh);
     cursor: pointer;
+    @media (max-width: 768px) {
+        font-size: calc(5px + 1vh);
+    }
     
 `
 
@@ -51,6 +62,9 @@ const StyledP = styled.p<{correct : boolean }>`
     font-size: calc(10px + 2vw);
     margin: 0;
     padding: 1vh 0;
+    @media (max-width: 768px) {
+        font-size: calc(5px + 1vh);
+    }
 `
 {/* helper function used to randomize the order of answers when when a question appears */}
 function shuffleArray<T>(array: T[]): T[] {
